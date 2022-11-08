@@ -1,0 +1,73 @@
+@font-face {
+  font-family: 'mother';
+  src: url('/font/earthbound-beginnings.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  /*TIPOS DE FORMAT()
+    opentype(otf)
+    truetypetype(ttf)
+    embendded-opentype
+    truetype-aat (aat) --> Apple Advanced Typography
+    svg 
+  */
+}
+* {
+  font-family: 'mother';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*TODO O CABEÇALHO DO SITE*/
+header{
+  border-bottom: 2px solid yellow; /*serve para literalmente fazer uma borda no fim de uma div*/
+  width: 100%;
+  /* padding: 5vh; */
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.445);
+}
+
+.tituloInicial img{
+  position: relative;/*é tipo um flex, serve pra mexer na posição da imagem*/
+  left: -10px;/*está mandando a imagem para a esquerda*/
+  height: 100px;
+  cursor: pointer;
+}
+
+.container{
+  padding: 10px 0;
+  font-family: 'mother', Times, serif;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+
+ul li{
+  color: white;
+}
+
+.navegacao ul,
+.navegacao1 ul{
+  list-style: none;
+  display: flex;
+  font-size: 13px;
+  letter-spacing: -3px;
+  justify-content: space-between;
+}
+
+.navegacao ul{
+  column-gap: 60px;/*ele abre espaço entre as colunas*/
+}
+
+.navegacao1 ul{
+  column-gap: 150px;
+}
+
+.navegacao ul li,
+.navegacao1 ul li{
+  cursor: pointer;
+}
+
+ 
+/*MAIN BANNER E CONTEÚDO DA PÁGINA*/
+

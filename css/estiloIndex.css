@@ -1,0 +1,51 @@
+body{
+  background-repeat: no-repeat;
+  background-image: url(/imgs/mapa.jpg);
+}
+
+.banner{
+  padding: 200px;
+  min-height: 100vh; /*respeita o tamanho mínimo da tela*/
+  background-color: rgba(0, 0, 0, 0.562);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.apresentacao{
+  color: white;
+  max-width: 580px; /*respeita o espaçamento da página deixando ela responsiva*/
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  line-height: 50px; /*espaçamento entre as linhas*/
+  letter-spacing: -3px;
+}
+
+.hola{
+  font-size: 30px;
+}
+
+main{
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.562);
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+.seta a{
+  text-decoration: none;
+  color: white;
+  font-size: 50px;
+}
+
+.seta{
+  transition: .3s;/*efeito de transição*/
+}
+
+.seta:hover{
+  transform: translateY(8px);/*muda a direção do item*/
+}
