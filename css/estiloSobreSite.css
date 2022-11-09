@@ -1,0 +1,11 @@
+.banner{
+    padding: 200px;
+    min-height: 100vh; /*respeita o tamanho mínimo da tela*/
+    background-color: rgba(0, 0, 0, 0.562);
+    color: white;
+    text-align: left;
+  }
+
+  ul li img{
+    position: absolute; 
+  }
