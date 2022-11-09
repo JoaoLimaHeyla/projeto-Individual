@@ -27,6 +27,11 @@ body{
   font-size: 30px;
 }
 
+.trailer .hola{
+  color: white;
+  letter-spacing: -4px;
+
+}
 main{
   min-height: 100vh;
   background-color: rgba(0, 0, 0, 0.562);
@@ -40,6 +45,7 @@ html{
   text-decoration: none;
   color: white;
   font-size: 50px;
+  cursor: pointer;
 }
 
 .seta{
@@ -48,4 +54,33 @@ html{
 
 .seta:hover{
   transform: translateY(8px);/*muda a direção do item*/
+}
+
+.trailer{
+  display: flex;
+  flex-direction: column;
+  row-gap: 2em;
+  align-items: center;
+  
+}
+
+.bgSubida{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.setaSubida{
+  display: flex;
+  color: rgb(255, 255, 255);
+  font-size: 50px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.setaSubida:hover{
+  transform: translateY(-8px);
+}
+
+.SrSaturno img{
+  width: 60px;
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,53 +11,70 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <!-- BIBLIOTECA REMIX ICON APENAS PARA ÍCONES -->
 </head>
-<body>
+
+<body class="teste">
     <header>
         <div class="container">
-        
-            <nav class="navegacao">
+
+            <div class="navegacao">
                 <ul>
                     <li>Sobre o site!</li>
                     <li>Sobre o jogo!</li>
                 </ul>
-            </nav>
+            </div>
 
-         <nav class="tituloInicial" id="titulo">
-            <a href="#"><img src="/imgs/EarthBound_Logo.png"></a>
-         </nav>
+            <div class="tituloInicial" id="titulo">
+                <a href="#"><img src="/imgs/EarthBound_Logo.png"></a>
+            </div>
 
-            <nav class="navegacao1">
+            <div class="navegacao1">
                 <ul>
                     <li>Login!</li>
                     <li>Cadastro!</li>
                 </ul>
-            </nav>
-    
-    </div>
+            </div>
+
+        </div>
     </header>
-    
+
     <div class="banner">
         <div class="apresentacao" id="inicio">
-            <span class="hola">Olá!</span> 
+            <span class="hola">Olá!</span>
             Seja bem vindo ao meu projeto individual do qual falo um pouco sobre o mundo de EarthBound!
         </div>
-        <div class="seta">
-            <a href="#trailer">
+        <div id="seta" class="seta">
+            <a>
                 <i class="ri-arrow-down-s-line"></i>
             </a>
         </div>
     </div>
     <!-- MAIN CONTEUDO DA PAGINA -->
-    <main id="trailer">
-        <div>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/5F8w8CdZhOw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <main id="trailer" >
+        <div class="trailer" >
+            <div>
+                <span class="hola">Trailer:</span>
+            </div>
+            <div class="trailerVideo">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/BeiD2QS8HCo"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    ></iframe>
+            </div>
+        </div>
+        <div class="bgSubida">
+            <div id="setaSubida" class="setaSubida">
+                <i class="ri-arrow-up-s-line"></i>
+            </div>
+            <div class="SrSaturno">
+                <img src="./imgs/saturn.gif">
+            </div>
         </div>
     </main>
-        <div id="setaSubidinha">
-                <i class="ri-arrow-up-s-line"></i>
-        </div>
     <!-- FIM DO CONTEÚDO DA PÁGINA -->
-    <footer></footer>
+    <footer>
+        TCHUTCHUCA
+    </footer>
     <script src="/main.js"></script>
 </body>
+
 </html>
