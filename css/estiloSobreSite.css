@@ -1,11 +1,22 @@
 .banner{
-    padding: 200px;
-    min-height: 100vh; /*respeita o tamanho mínimo da tela*/
-    background-color: rgba(0, 0, 0, 0.562);
-    color: white;
-    text-align: left;
-  }
+  padding: 200px;
+  min-height: 100vh; /*respeita o tamanho mínimo da tela*/
+  background-color: rgba(0, 0, 0, 0.692);
+  color: white;
+}
 
-  ul li img{
-    position: absolute; 
-  }
+.apresentacao{
+  line-height: 50px;    
+  letter-spacing: -3px;
+}
+
+.aviso{
+  font-size: 25px;
+}
+.aviso2{
+  font-size: 20px;
+  font-weight: 600;
+}
+ul li img{ 
+ position: absolute; 
+}

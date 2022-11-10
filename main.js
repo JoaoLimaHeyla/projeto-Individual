@@ -1,10 +1,25 @@
 const scrowUp = document.getElementById('setaSubida');
 const scrowDown = document.getElementById('seta');
 
-scrowDown.addEventListener('click', descer => {
+scrowDown.addEventListener('click', () => {
     window.scrollTo(0,520);
 });
 
-scrowUp.addEventListener('click', subir => {
+scrowUp.addEventListener('click', () => {
   window.scrollTo(0,0);  
-}); //eventListener funciona como um 'observador', o comando no primeiro parâmetro indica a ação que ele espera para poder ser executado, e o segundo a função que ele chama após execução
+}); //eventListener funciona como um 'observador'
+
+function opacidade(){
+  const fakeLoading = document.getElementById('fakeLoading');
+
+  setTimeout(() =>{
+    fakeLoading.style.opacity = 0;
+
+    setTimeout(() => fakeLoading.style.display = 'none' , 400)//arrow function resumida 
+
+  }, 4800);
+
+
+};
+
+opacidade();

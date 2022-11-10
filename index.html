@@ -9,17 +9,28 @@
     <link rel="stylesheet" href="./css/estiloGeral.css">
     <link rel="stylesheet" href="./css/estiloIndex.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="">
     <!-- BIBLIOTECA REMIX ICON<a href="#"> APENAS PARA ÍCONES -->
 </head></a>
 
-<body class="teste">
+<body>
+    <div id="fakeLoading" class="fakeLoading">
+        <div class="fakeDiv">
+
+        </div>
+        <img src="./imgs/109.gif">
+    </div>
     <header>
         <div class="container">
 
             <div class="navegacao">
                 <ul>
-                    <a href="./sobreSite.html"><li>Sobre o site!</li></a>
-                    <a href="#"><li>Sobre o jogo!</li></a>
+                    <a href="./sobreSite.html">
+                        <li>Sobre o site!</li>
+                    </a>
+                    <a href="#">
+                        <li>Sobre o jogo!</li>
+                    </a>
                 </ul>
             </div>
 
@@ -29,8 +40,12 @@
 
             <div class="navegacao1">
                 <ul>
-                    <a href="#"><li>Login!</li></a>
-                    <a href="#"><li>Cadastro!</li></a>
+                    <a href="#">
+                        <li>Login!</li>
+                    </a>
+                    <a href="#">
+                        <li>Cadastro!</li>
+                    </a>
                 </ul>
             </div>
 
@@ -38,41 +53,46 @@
     </header>
 
     <div class="banner">
-        <div class="apresentacao" id="inicio">
-            <span class="hola">Olá!</span>
-            Seja bem vindo ao meu projeto individual do qual falo um pouco sobre o mundo de EarthBound!
-        </div>
-        <div id="seta" class="seta">
-            <a>
-                <i class="ri-arrow-down-s-line"></i>
-            </a>
+        <div class="cont">
+            <div class="apresentacao" id="inicio">
+                <span class="hola">Olá!</span>
+                Seja bem vindo ao meu projeto individual do qual falo um pouco sobre o mundo de EarthBound!
+            </div>
+            <div id="seta" class="seta">
+                <a>
+                    <i class="ri-arrow-down-s-line"></i>
+                </a>
+            </div>
         </div>
     </div>
     <!-- MAIN CONTEUDO DA PAGINA -->
-    <main id="trailer" >
-        <div class="trailer" >
+    <main id="trailer">
+        <div class="trailer">
             <div>
                 <span class="hola">Trailer:</span>
             </div>
             <div class="trailerVideo">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/BeiD2QS8HCo"
                     title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    ></iframe>
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+            </div>
+        </div>
+    </main>
+    <!-- FIM DO CONTEÚDO DA PÁGINA -->
+    <footer>
+        <div class="footer">
+            <div class="peqText">
+                Feito por um aluno SPTech&copy;
+            </div>
+            <div class="SrSaturno">
+                <img src="./imgs/saturn.gif">
             </div>
         </div>
         <div class="bgSubida">
             <div id="setaSubida" class="setaSubida">
                 <i class="ri-arrow-up-s-line"></i>
             </div>
-            <div class="SrSaturno">
-                <img src="./imgs/saturn.gif">
-            </div>
         </div>
-    </main>
-    <!-- FIM DO CONTEÚDO DA PÁGINA -->
-    <footer>
-        TCHUTCHUCA
     </footer>
     <script src="./main.js"></script>
 </body>
