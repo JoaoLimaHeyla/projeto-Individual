@@ -32,8 +32,8 @@ body{
 }
 
 .tituloInicial img{
-  position: relative;/*é tipo um flex, serve pra mexer na posição da imagem*/
-  left: -10px;/*está mandando a imagem para a esquerda*/
+  position: relative;
+  left: -10px;
   height: 100px;
   cursor: pointer;
 }
