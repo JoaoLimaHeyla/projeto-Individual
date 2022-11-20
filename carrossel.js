@@ -26,3 +26,4 @@ document.querySelectorAll(".carrossel").forEach(carrossel => {
     itens[0].classList.add("carrosselImg-Selecionado");
     
 });
+

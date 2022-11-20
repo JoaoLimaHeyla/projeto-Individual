@@ -6,51 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto Individual</title>
     <link rel="stylesheet" href="./css/estiloForms.css">
-    <link rel="stylesheet" href="./css/estiloLogin.css">
+    <link rel="stylesheet" href="./css/estiloVotos.css">
 </head>
 <body>
     <header>
         <div class="container">
-
-            <div class="navegacao">
-                <ul>
-                    <a href="./sobreSite.html"><li>Sobre o site!</li></a>
-                    <a href="./sobreJogo.html"><li>Sobre o jogo!</li></a>
-                </ul>
-            </div>
-
             <div class="tituloInicial" id="titulo">
-                <a href="./index.html"><img src="./imgs/EarthBound_Logo.png"></a>
+                <a href="#"><img src="./imgs/EarthBound_Logo.png"></a>
             </div>
-
             <div class="navegacao1">
                 <ul>
-                    <a href="#"><li>Login!
+                    <a href="./loginPeR.html"><li>Perguntas e Respostas!
                          <img src="./imgs/saturn.gif" width="30px"> <!--Sr Saturno para a página atual-->
                     </li></a>
-                    <a href="./cadastrando.html"><li>Cadastro!</li></a>
+                    <a href="./index.html"><li>Sair!</li></a>
                 </ul>
             </div>
-
         </div>
     </header>
     <main>
         <div class="banner">
-          <div class="caixaFormulario">
-            <div class="caixaDados" id="inicio">
-               <div class="campo">
-                    <label for="apelido">Nickname:</label>
-                    <input type="text" name="apelido" id="apelido" placeholder="Insira seu nick!">
-               </div>
-               <div class="campo">
-                    <label for="senha">Senha:</label>
-                    <input type="password" name="senha" id="senha" placeholder="********">
-               </div>   
-               <div class="butao">
-                <span class="butao2">Cadastrar</span>
-            </div>         
+            <div class="caixaFormulario">
+
+                <div class="caixaDados" id="inicio">
+                    <div class="campo">
+                        <div class="voto">Gostou do site? Deixe seu voto e comentário abaixo :) </div>
+                    </div>
+                </div>    
+
+                <div class="campoVoto">
+                        <div class="gostei">
+                            <img src="./imgs/Bomba.gif" alt="sim" width="200px">
+                        </div>
+
+                        <div class="naoGostei">
+                            <h1>Meh</h1>
+                        </div>
+                        <img src="./imgs/porky.gif" alt="porkyVilao" width="30px">   
+                   </div>
             </div>
-          </div>
+
         </div>
     </main>
     <footer>
@@ -68,5 +63,6 @@
             </div>
         </div>
     </footer>
+    <script src=""></script>
 </body>
 </html>

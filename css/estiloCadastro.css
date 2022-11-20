@@ -1,0 +1,47 @@
+.banner{
+    padding: 200px;
+    min-height: 100vh; /*respeita o tamanho mínimo da tela*/
+    background-color: rgba(0, 0, 0, 0.692);
+    color: white;
+}
+
+ul li img{ 
+    position: absolute; 
+}
+
+.caixaFormulario{
+    background-repeat: no-repeat;
+    background-image: url(../imgs/textBox.png);
+    background-position: 13vw;
+    background-size: 610px 380px;
+}
+
+.caixaDados{
+    position: relative;
+    line-height: 40px;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    left: 19vw;
+}
+
+.campo{
+    text-align: center;
+}
+
+.campo label{
+    font-size: 15px;
+    padding: 10px;     
+}
+
+.campo input{
+    padding: 5px;
+    border-radius: 10px;
+    border: 3px solid cyan;
+    background-color: rgb(70, 11, 70);
+    color: white;
+    
+}

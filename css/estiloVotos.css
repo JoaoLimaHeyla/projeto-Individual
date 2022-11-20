@@ -1,0 +1,56 @@
+.banner{
+    padding: 200px;
+    min-height: 100vh; /*respeita o tamanho mínimo da tela*/
+    background-color: rgba(0, 0, 0, 0.692);
+    color: white;
+}
+
+ul li img{ 
+    position: absolute; 
+}
+
+.caixaFormulario{
+    padding: 40px;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-image: url(../imgs/textBox.png);
+    background-position: 12vw;
+    background-size: 610px 420px;
+}
+
+.caixaDados{
+    position: relative;
+    line-height: 40px;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    left: 14vw;
+}
+
+.campo{
+    text-align: center;
+    font-size: 18px;
+    padding: 10px;     
+}
+
+.campoVoto{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+    position: relative;
+    left: 225px;
+}
+
+.campoVoto img {
+    position: relative;
+    right: 60px;
+}
+
+.gostei,
+.naoGostei{
+    cursor:pointer;
+}
