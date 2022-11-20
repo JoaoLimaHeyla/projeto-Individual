@@ -40,17 +40,17 @@ ul li img{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 50%;
+    width: 70%;
     position: relative;
-    left: 225px;
-}
-
-.campoVoto img {
-    position: relative;
-    right: 60px;
+    left: 140px;
 }
 
 .gostei,
 .naoGostei{
     cursor:pointer;
+}
+
+.porky img{
+    position: relative;
+    right: 130px;
 }
