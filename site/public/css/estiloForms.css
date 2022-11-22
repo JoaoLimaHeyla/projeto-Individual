@@ -1,0 +1,122 @@
+@font-face {
+    font-family: 'mother';
+    src: url('../font/earthbound-beginnings.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    /*TIPOS DE FORMAT()
+      opentype(otf)
+      truetypetype(ttf)
+      embendded-opentype
+      truetype-aat (aat) --> Apple Advanced Typography
+      svg 
+    */
+}
+
+* {
+    font-family: 'mother';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*TODO O CABEÇALHO DO SITE*/
+header {
+    border-bottom: 2px solid yellow;
+    width: 100%;
+    z-index: 1;
+    /*serve para especificar camadas*/
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.726);
+}
+
+body {
+    background-repeat: no-repeat;
+    background-image: url(../imgs/fundoSobre.gif);
+    background-size: cover;
+}
+
+.tituloInicial img {
+    position: relative;
+    left: -10px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.container {
+    padding: 10px 0;
+    font-family: 'mother', Times, serif;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+ul li {
+    color: white;
+}
+
+.navegacao ul,
+.navegacao1 ul {
+    list-style: none;
+    display: flex;
+    font-size: 13px;
+    letter-spacing: -3px;
+    justify-content: space-between;
+}
+
+.navegacao ul {
+    column-gap: 60px;
+    /*ele abre espaço entre as colunas*/
+}
+
+.navegacao a,
+.navegacao1 a {
+    text-decoration: none;
+}
+
+.navegacao1 ul {
+    column-gap: 150px;
+}
+
+.navegacao ul li,
+.navegacao1 ul li {
+    cursor: pointer;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.692);
+    min-height: 10vh;
+}
+
+.footer {
+    border-radius: 100px;
+    background-color: yellow;
+    max-width: 50%;
+    /**/
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.peqText {
+    font-size: 10px;
+    margin: 10px;
+}
+
+.SrSaturno img {
+    width: 60px;
+    position: absolute;
+}
+
+.butao{
+    cursor: pointer;
+    background-color: rgb(66, 201, 201);
+    border-radius: 10px;
+    
+}
+
+.butao:hover{
+    background-color: rgb(20, 90, 90);
+    
+}
+/*MAIN BANNER E CONTEÚDO DA PÁGINA*/

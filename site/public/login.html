@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Individual</title>
+    <link rel="stylesheet" href="./css/estiloForms.css">
+    <link rel="stylesheet" href="./css/estiloLogin.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+
+            <div class="navegacao">
+                <ul>
+                    <a href="./sobreSite.html"><li>Sobre o site!</li></a>
+                    <a href="./sobreJogo.html"><li>Sobre o jogo!</li></a>
+                </ul>
+            </div>
+
+            <div class="tituloInicial" id="titulo">
+                <a href="./index.html"><img src="./imgs/EarthBound_Logo.png"></a>
+            </div>
+
+            <div class="navegacao1">
+                <ul>
+                    <a href="#"><li>Login!
+                         <img src="./imgs/saturn.gif" width="30px"> <!--Sr Saturno para a página atual-->
+                    </li></a>
+                    <a href="./cadastrando.html"><li>Cadastro!</li></a>
+                </ul>
+            </div>
+
+        </div>
+    </header>
+    <div class="card_erro" id="cardErro">
+        <span id="mensagem_erro"></span>
+    </div>
+    <main>
+        <div class="banner">
+          <div class="caixaFormulario">
+            <div class="caixaDados" id="inicio">
+               <div class="campo">
+                    <label for="email">Email:</label>
+                    <input type="text" name="email" id="email_input" placeholder="Insira seu nick!">
+               </div>
+               <div class="campo">
+                    <label for="senha">Senha:</label>
+                    <input type="password" name="senha" id="senha_input" placeholder="********">
+               </div>   
+               <div class="butao">
+                <button id="logar" onclick="entrar()">Entrar</button>
+            </div>         
+            </div>
+          </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer">
+            <div class="peqText">
+                Feito por um aluno SPTech&copy;
+            </div>
+            <div class="SrSaturno">
+                <img src="./imgs/saturn.gif">
+            </div>
+        </div>
+        <div class="bgSubida">
+            <div id="setaSubida" class="setaSubida">
+                <i class="ri-arrow-up-s-line"></i>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+<script>
+    
+
+    function entrar() {
+
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "./dashboard/cards.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>
