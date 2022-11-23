@@ -20,7 +20,7 @@ var sqlServerConfig = {
 // CONEXÃO DO MYSQL WORKBENCH (LOCAL)
 var mySqlConfig = {
     host: "localhost",
-    database: "bdearthbound",
+    database: "earthbound",
     user: "root",
     password: "!4321",
 };
