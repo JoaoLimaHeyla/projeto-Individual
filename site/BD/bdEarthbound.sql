@@ -12,7 +12,7 @@ create table usuario (
     nome varchar(45),
     senha varchar(45),
     fkVotos int,
-    foreign key (fkVotos) references votos(idVotos)
+    foreign key (fkVotos) references votos(idVoto)
 );
 
 create table aviso (

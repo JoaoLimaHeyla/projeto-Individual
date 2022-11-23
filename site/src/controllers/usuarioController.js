@@ -59,6 +59,27 @@ function entrar(req, res) {
     }
 
 }
+//NOVO
+function votar(){
+
+    var votoSim = req.body.votoServer;
+
+    if(votoSim == undefined){
+        res.status(400).send("Seu voto está undefined!")
+    }else{
+        usuarioModel.votar(simENao)
+        .then(
+            function(resultado){
+                res.json(resultado);
+            }
+        ).catch(function(erro){
+            console.log(erro);
+            console.log("Houver um erro ao votar", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        })
+    };
+
+}
 
 function cadastrar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
@@ -96,6 +117,7 @@ function cadastrar(req, res) {
 
 module.exports = {
     entrar,
+    votar,//alteração aqui
     cadastrar,
     listar,
     testar
