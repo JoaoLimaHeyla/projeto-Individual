@@ -14,11 +14,12 @@ ul li img{
     position: absolute;
     background-repeat: no-repeat;
     background-image: url(../imgs/textBox.png);
-    background-position: 12vw;
-    background-size: 610px 420px;
+    background-position: 16vw 10vh;
+    background-size: 510px 180px;
 }
 
 .caixaDados{
+    letter-spacing: -3px;
     position: relative;
     line-height: 40px;
     padding: 50px 100px;
@@ -26,8 +27,8 @@ ul li img{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 50%;
-    left: 14vw;
+    width: 60%;
+    left: 17vw;
 }
 
 .campo{
@@ -40,7 +41,7 @@ ul li img{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 70%;
+    width: 100%;
     position: relative;
     left: 140px;
 }
@@ -48,9 +49,12 @@ ul li img{
 .gostei,
 .naoGostei{
     cursor:pointer;
+    letter-spacing: -4px;
 }
 
 .porky img{
     position: relative;
-    right: 130px;
+    right: 120px;
 }
+
+/*Daqui pra baixo é o mural de avisos*/
