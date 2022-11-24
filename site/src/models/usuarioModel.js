@@ -19,14 +19,24 @@ function entrar(email, senha) {
 }
 
 //NOVO
-function votar(simENao){
-    console.log("ACESSEI O USUARIO MODEL", simENao);
+function votar(idUsuario){ //SIM
+    console.log("ACESSEI O USUARIO MODEL");
     var instrucao = `
-        INSERT INTO aviso (simENao) VALUES ('${simENao}');
+        update usuario set fkVotos = 1 where idUsuario = ${idUsuario}
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 };
+
+function naoVotar(idUsuario){
+    console.log("ACESSEI O USUARIO MODEL");
+    var instrucao = `
+        update usuario set fkVotos = 2 where idUsuario = ${idUsuario}
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+};
+
 
 // Coloque os mesmos parâmetros aqui. Vá para a var instrucao
 function cadastrar(nome, email, senha) {
@@ -43,6 +53,7 @@ function cadastrar(nome, email, senha) {
 
 module.exports = {
     entrar,
+    naoVotar,
     votar,//Alteracao aqui
     cadastrar,
     listar,

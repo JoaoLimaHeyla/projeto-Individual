@@ -3,7 +3,7 @@ use earthbound;
 
 create table votos (
 	idVoto int primary key auto_increment,
-    simENao varchar(45)
+    voto varchar(45)
 );
 
 create table usuario (
@@ -24,3 +24,6 @@ create table aviso (
     foreign key (idUsuario) references usuario(idUsuario)
 );
 
+select * from usuario;
+
+select count(fkVotos) from usuario join votos on fkVotos = idUsuario where fkVotos = 1 or fkVotos = 2;
