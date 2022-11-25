@@ -24,7 +24,11 @@ router.put("/votar/:idUsuario", function (req,res) {
 router.put("/naoVotar/:idUsuario", function (req,res) {
     usuarioController.naoVotar(req,res);
 });
-
+//======================================
+router.get("/totalVotos", function(req, res){
+    usuarioController.totalVotos(req, res);
+});
+//======================================
 router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
 });

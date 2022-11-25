@@ -18,9 +18,7 @@ botaoGostei.addEventListener('click',
 
             if (resposta.ok) {
                 console.log("VOTO ADICIONADO COM SUCESSO");
-                //N PRECISA SER SET TIMEOUT MAS ADICIONAR UM 'BLOQUEIO' APÓS O VOTO
-
-                //setTimeout
+           
                 setTimeout(() => {
                     window.location = "posLogin.html";
                 }, "1000")
@@ -67,3 +65,33 @@ botaoNGostei.addEventListener('click',
         return false;
     });
         //
+//=========================================================================
+function totalVotos(){
+
+        fetch(`/usuarios/totalVotos`, {
+            method: "get",
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+        }).then(function (resposta) {
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                console.log("VOTO ADICIONADO COM SUCESSO");
+                //N PRECISA SER SET TIMEOUT MAS ADICIONAR UM 'BLOQUEIO' APÓS O VOTO
+
+                //setTimeout
+                setTimeout(() => {
+                    window.location = "posLogin.html";
+                }, "1000")
+
+            } else {
+                console.log("HOUVE UM ERRO");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`)
+        })
+        return false;
+}
+//==================================================

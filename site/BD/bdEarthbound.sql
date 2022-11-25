@@ -16,12 +16,11 @@ create table usuario (
 );
 
 create table aviso (
-	idAviso int,
-    idUsuario int,
+	idAviso int primary key auto_increment,
+    fk_usuario int default null,
 	titulo varchar(100),
     descricao varchar(300),
-    primary key (idAviso),
-    foreign key (idUsuario) references usuario(idUsuario)
+    foreign key (fk_usuario) references usuario(idUsuario)
 );
 
 select * from usuario;
