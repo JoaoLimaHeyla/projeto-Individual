@@ -1,6 +1,7 @@
 .carrossel{
     position: relative;
-    background-color: rgba(0, 0, 0, 0.726);
+    bottom: 180px;
+    z-index: 9;
 }
 
 .carrosselImg{
@@ -47,4 +48,12 @@
 .botaoCarrossel:hover,
 .botaoCarrossel-Selecionado{
     filter: brightness(250%);
+}
+
+.complementoBG{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.726);
+    width: 100%;
+    padding: 141px;
+    top: 810px;
 }

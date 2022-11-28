@@ -21,10 +21,16 @@ function cadastrar() {
         cardErro.style.display = "block"
         mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
 
-        
         return false;
-    }
-    else {
+    }else if(!emailVar.includes("@") || !emailVar.endsWith(".com")){
+        alert("Por favor, verifique se as credênciais de email estão corretas");
+        return false;
+
+    }else if(senhaVar.length <= 7 || senhaVar != confirmacaoSenhaVar){
+        alert("A senha precisa ter no mínimo 8 caracteres, e também refaça a verificação");
+        return false;
+
+    }else {
         setInterval(sumirMensagem, 3000)
     }
 

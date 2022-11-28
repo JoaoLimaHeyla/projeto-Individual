@@ -1,29 +1,17 @@
-document.querySelectorAll(".carrossel").forEach(carrossel => {
-    const itens = carrossel.querySelectorAll(".carrosselImg");//aqui ele pega todos as .class com esse nome 
-    const botoesImg = Array.from(itens, () =>{ 
-        return `<span class = "botaoCarrossel"></span>`;
+const carrossel = document.querySelector(".carrossel");
+const botoes = carrossel.querySelectorAll(".botaoCarrossel");
+const itens = carrossel.querySelectorAll(".carrosselImg");//aqui ele pega todos as .class com esse nome e transforma em array 
+
+
+botoes.forEach((botao, i) => { // botao é apenas um apelido pelo o que eu peço pra ele rodar tudo dentro e o i de index passa a posição
+    botao.addEventListener("click",() => { // função sem parâmetro
+        itens.forEach(item => item.classList.remove("carrosselImg-Selecionado"));//item apelido e como é em uma linha ele não precisa de colchetes
+        botoes.forEach(botao => botao.classList.remove("botaoCarrossel-Selecionado"));//removo todas as class e só na selecionada que fica graças ao add abaixo
+
+        itens[i].classList.add("carrosselImg-Selecionado");
+        botao.classList.add("botaoCarrossel-Selecionado");
     });
-
-    carrossel.insertAdjacentHTML("beforeend",`
-        <div class = "carrosselNavegacao">
-            ${botoesImg.join("")}
-        </div>
-    `);
-
-    const botoes = carrossel.querySelectorAll(".botaoCarrossel");
-
-    botoes.forEach((botao, i) => {
-        botao.addEventListener("click",() => {
-            itens.forEach(item => item.classList.remove("carrosselImg-Selecionado"));
-            botoes.forEach(botao => botao.classList.remove("botaoCarrossel-Selecionado"));
-
-            itens[i].classList.add("carrosselImg-Selecionado");
-            botao.classList.add("botaoCarrossel-Selecionado");
-        });
-    });
-
-    //Seleciona o primeiro item assim que a página carregar
-    itens[0].classList.add("carrosselImg-Selecionado");
-    
 });
 
+//Seleciona o primeiro item assim que a página carregar
+itens[0].classList.add("carrosselImg-Selecionado");

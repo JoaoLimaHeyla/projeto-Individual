@@ -6,6 +6,10 @@ create table votos (
     voto varchar(45)
 );
 
+insert into votos (voto) values 
+('sim'),
+('não');
+
 create table usuario (
 	idUsuario int primary key auto_increment,
     email varchar(45),
@@ -17,12 +21,14 @@ create table usuario (
 
 create table aviso (
 	idAviso int primary key auto_increment,
-    fk_usuario int default null,
+    fkAviso int unique,
 	titulo varchar(100),
     descricao varchar(300),
-    foreign key (fk_usuario) references usuario(idUsuario)
+    foreign key (fkAviso) references usuario(idUsuario)
 );
 
 select * from usuario;
+
+select * from usuario join aviso on fkAviso = idUsuario;
 
 select count(fkVotos) from usuario join votos on fkVotos = idUsuario where fkVotos = 1 or fkVotos = 2;

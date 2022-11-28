@@ -22,7 +22,7 @@ function entrar(email, senha) {
 function totalVotos(){
     console.log("ACESSEI O USUARIO MODEL");
     var instrucao = `
-        select count(fkVotos) from usuario join votos on fkVotos = idUsuario where fkVotos = 1 or fkVotos = 2;
+        select count(fkVotos) as 'contagem' from usuario where fkVotos = 1 or fkVotos = 2;
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -31,7 +31,7 @@ function totalVotos(){
 function votar(idUsuario){ //SIM
     console.log("ACESSEI O USUARIO MODEL");
     var instrucao = `
-        update usuario set fkVotos = 1 where idUsuario = ${idUsuario}
+        update usuario set fkVotos = 1 where idUsuario = ${idUsuario};
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -40,7 +40,7 @@ function votar(idUsuario){ //SIM
 function naoVotar(idUsuario){
     console.log("ACESSEI O USUARIO MODEL");
     var instrucao = `
-        update usuario set fkVotos = 2 where idUsuario = ${idUsuario}
+        update usuario set fkVotos = 2 where idUsuario = ${idUsuario};
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/estiloVotos.css">
     <script src="./js/funcoes.js"></script>
 </head>
-<body >
+<body onload="validarSessao(), totalVotos()">
     <header>
         <div class="container">
             <div class="tituloInicial" id="titulo">
@@ -28,8 +28,13 @@
     </header>
     <main>
         <div class="banner">
-            <div class="caixaFormulario">
 
+            <p>Olá, <span id="b_usuario"></span>!</p>
+            <br>
+            <p>Seja bem vindo(a) à sessão de votos, onde você pode votar entre Smash!(Gostei!) e Meh!(Não gostei!).</p>
+            <br>
+            <p>Seu voto é único, porém você pode mudar a hora que quiser! A contagem de votos conta quantas pessoas votaram no total.</p>
+            <div class="caixaFormulario">
                 <div class="caixaDados" id="inicio">
                     <div class="campo">
                         <div class="voto">Gostou do site? Deixe seu voto! </div>
@@ -48,6 +53,7 @@
                         <img src="./imgs/porky.gif" alt="porkyVilao" width="30px">
                     </div>   
                    </div>
+                   <div id="contagem" class="contagem"></div>
             </div>
             
         </div>

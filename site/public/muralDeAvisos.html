@@ -27,10 +27,13 @@
                         </li>
                     </a>
                     <a href="#">
-                        <li>Comentários!</li>
+                        <li>Comentários!
+                         <img src="./imgs/saturn.gif" width="30px"> <!--Sr Saturno para a página atual-->
+
+                        </li>
                     </a>
                     <a href="./posLogin.html">
-                        <li>Voltar</li>
+                        <li>Voltar!</li>
                     </a>
                 </ul>
             </div>
@@ -41,14 +44,15 @@
     <main>
         <div class="banner">
             <div class="avisos">
-                <h1>Olá <div id="b_usuario"></div> insira aqui seu comentário!</h1>
+                <span id="avisos">Olá <span id="b_usuario"></span>, insira aqui seu comentário!(Apenas um por conta!)</span>
                 <div class="formulario">
+                    <br>
                     <form id="postagem" method="post" onsubmit="return publicar()">
                         <!--id form_postagem-->
                         <label>
                             Título:
                             <br>
-                            <input name="titulo" id="titulo" maxlength="100" type="text">
+                            <input name="titulo" id="titulo" maxlength="100" type="text" placeholder="Insira aqui seu título!">
                         </label>
                         <br>
                         <label>
@@ -56,8 +60,10 @@
                                 placeholder="Insira aqui seu comentário!"></textarea>
                             <!--name descricao id textarea_descricao-->
                         </label>
+                        <br>
                         <button>Enviar</button>
                     </form>
+                    <br>
                 </div>
                 <div class="comentarioPub">
                     <div id="espacoComentario" class="comentarioEstilo"></div>
@@ -95,7 +101,7 @@
 
         var corpo = {
             titulo: postagem.titulo.value,
-            descricao: postagem.descricao.value
+            descricao: postagem.comentario.value
         }
 
         fetch(`/avisos/publicar/${idUsuario}`, {
@@ -120,6 +126,9 @@
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
+            
+            avisos.innerHTML = `Você já comentou, ${b_usuario.innerHTML}!<img src="./imgs/warning sign.png" alt="aviso" width="17px">`
+            postagem.style.display = 'none';
             //finalizarAguardar();
         });
 
@@ -132,6 +141,7 @@
         fetch("/avisos/listar").then(function (resposta) {
             if (resposta.ok) {
                 if (resposta.status == 204) {
+
                     var feed = document.getElementById("espacoComentario");
                     var mensagem = document.createElement("span");
                     mensagem.innerHTML = "Nenhum resultado encontrado."
@@ -143,55 +153,60 @@
                     console.log("Dados recebidos: ", JSON.stringify(resposta));
 
                     var feed = document.getElementById("espacoComentario");
-                    feed.innerHTML = "";
-                    for (let i = 0; i < resposta.length; i++) {
-                        var publicacao = resposta[i];
 
-                        // criando e manipulando elementos do HTML via JavaScript
-                        var divPublicacao = document.createElement("div");
-                        var spanID = document.createElement("span");
-                        var spanTitulo = document.createElement("span");
-                        var spanNome = document.createElement("span");
-                        var divDescricao = document.createElement("div");
-                        var divButtons = document.createElement("div");
-                        var btnEditar = document.createElement("button");
-                        var btnDeletar = document.createElement("button");
-
-
-                        spanID.innerHTML = "ID: <b>" + publicacao.idAviso + "</b>";
-                        spanTitulo.innerHTML = "Título: <b>" + publicacao.titulo + "</b>";
-                        spanNome.innerHTML = "Autor: <b>" + publicacao.nome + "</b>";
-                        divDescricao.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
-                        btnEditar.innerHTML = "Editar";
-                        btnDeletar.innerHTML = "Deletar";
-
-                        // divPublicacao.className = "publicacao";
-                         spanTitulo.id = "inputNumero" + publicacao.idAviso;
-                        // spanNome.className = "publicacao-nome";
-                         spanTitulo.className = "publicacao-titulo";
-                        // divDescricao.className = "publicacao-descricao";
-
-                        // divButtons.className = "div-buttons"
-
-//                        btnEditar.className = "publicacao-btn-editar"
-                        btnEditar.id = "btnEditar" + publicacao.idAviso;
-                        btnEditar.setAttribute("onclick", `editar(${publicacao.idAviso})`);
-
-  //                      btnDeletar.className = "publicacao-btn-editar"
-                        btnDeletar.id = "btnDeletar" + publicacao.idAviso;
-                        btnDeletar.setAttribute("onclick", `deletar(${publicacao.idAviso})`);
-
-                        divPublicacao.appendChild(spanID);
-                        divPublicacao.appendChild(spanNome);
-                        divPublicacao.appendChild(spanTitulo);
-                        divPublicacao.appendChild(divDescricao);
-                        divPublicacao.appendChild(divButtons);
-                        divButtons.appendChild(btnEditar);
-                        divButtons.appendChild(btnDeletar);
-                        feed.appendChild(divPublicacao);
-                    }
-
-                    //finalizarAguardar();
+                    feed.innerHTML = "<br><br><span style='font-size: 30px'>Comentários:<span>";
+                        
+                        for (let i = 0; i < resposta.length; i++) {
+                            var publicacao = resposta[i];
+                            
+                            // criando e manipulando elementos do HTML via JavaScript
+                            var divPublicacao = document.createElement("div");
+                            var spanID = document.createElement("span");
+                            var spanTitulo = document.createElement("span");
+                            var spanNome = document.createElement("span");
+                            var divDescricao = document.createElement("div");
+                            var divButtons = document.createElement("div");
+                            //var btnEditar = document.createElement("button");
+                            //var btnDeletar = document.createElement("button");
+                            
+                            
+                            spanID.innerHTML = "<span style='color: rgb(3, 107, 107) '>ID:</span> " + publicacao.idAviso + "<br>";
+                            spanTitulo.innerHTML = "Título: " + publicacao.titulo + " ";
+                            spanNome.innerHTML = "Autor: " + publicacao.nome + "<br>";
+                            divDescricao.innerHTML = "<br>Descriçao: <br><br>" + publicacao.descricao;
+                            
+                            //btnEditar.innerHTML = "Editar";
+                            //btnDeletar.innerHTML = "Deletar";
+                            
+                            divPublicacao.className = "publicacao";
+                            spanTitulo.id = "inputNumero" + publicacao.idAviso;
+                            // spanNome.className = "publicacao-nome";
+                            spanTitulo.className = "publicacao-titulo";
+                            divDescricao.className = "publicacao-descricao";
+                            
+                            // divButtons.className = "div-buttons"
+                            
+                            //                        btnEditar.className = "publicacao-btn-editar"
+                            //btnEditar.id = "btnEditar" + publicacao.idAviso;
+                            //btnEditar.setAttribute("onclick", `editar(${publicacao.idAviso})`);
+                            
+                            //                      btnDeletar.className = "publicacao-btn-editar"
+                            //btnDeletar.id = "btnDeletar" + publicacao.idAviso;
+                            //btnDeletar.setAttribute("onclick", `deletar(${publicacao.idAviso})`);
+                            
+                            divPublicacao.appendChild(spanID);
+                            divPublicacao.appendChild(spanNome);
+                            divPublicacao.appendChild(spanTitulo);
+                            divPublicacao.appendChild(divDescricao);
+                            divPublicacao.appendChild(divButtons);
+                            //divButtons.appendChild(btnEditar);
+                            //divButtons.appendChild(btnDeletar);
+                            feed.appendChild(divPublicacao);
+                            
+                            feed.innerHTML += "<br>";
+                        }
+                        
+                        //finalizarAguardar();
                 });
             } else {
                 throw ('Houve um erro na API!');
