@@ -1,7 +1,7 @@
 .carrossel{
     position: relative;
     bottom: 180px;
-    z-index: 9;
+    z-index: 1;
 }
 
 .carrosselImg{
@@ -10,7 +10,7 @@
     color: white;
     display: none;
     position: relative;
-    left: 460px;
+    left: 430px;
 }
 
 .carrosselImg img{
@@ -54,6 +54,6 @@
     position: absolute;
     background-color: rgba(0, 0, 0, 0.726);
     width: 100%;
-    padding: 141px;
+    padding: 133px;
     top: 810px;
 }

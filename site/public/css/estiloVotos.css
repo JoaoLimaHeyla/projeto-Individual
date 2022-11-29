@@ -15,8 +15,8 @@ ul li img{
     position: absolute;
     background-repeat: no-repeat;
     background-image: url(../imgs/textBox.png);
-    background-position: 16vw 10vh;
-    background-size: 510px 180px;
+    background-position: 13vw 11vh;
+    background-size: 510px 170px;
 }
 
 .caixaDados{
@@ -28,7 +28,7 @@ ul li img{
     align-items: center;
     flex-direction: column;
     width: 60%;
-    left: 17vw;
+    left: 15vw;
 }
 
 .campo{
@@ -43,7 +43,7 @@ ul li img{
     justify-content: space-around;
     width: 100%;
     position: relative;
-    left: 140px;
+    left: 100px;
 }
 
 .gostei,
@@ -112,7 +112,7 @@ button:hover{
 
 .contagem{
     position: relative;
-    left: 80px;
+    left: 60px;
     text-align: center;
     font-size: 20px;
 }
