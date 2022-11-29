@@ -21,5 +21,12 @@ function opacidade(){
 
 
 };
-
 opacidade();
+
+
+const ctgSaturno = document.getElementById("SrSaturno");
+var loucura = 0
+ctgSaturno.addEventListener('click', () => {
+  loucura++
+  alert(`Você clicou no srSaturno ${loucura} vezes!`)
+})
