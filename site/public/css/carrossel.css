@@ -10,7 +10,7 @@
     color: white;
     display: none;
     position: relative;
-    left: 430px;
+    left: 35%;
 }
 
 .carrosselImg img{
@@ -55,5 +55,5 @@
     background-color: rgba(0, 0, 0, 0.726);
     width: 100%;
     padding: 133px;
-    top: 810px;
+    top: 765px;
 }
